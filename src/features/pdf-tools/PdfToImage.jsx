@@ -11,7 +11,8 @@ export default function PdfToImage() {
         setProcessing(true);
         try {
             const pdfjsLib = await import('pdfjs-dist');
-            pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+            const workerUrl = await import('pdfjs-dist/build/pdf.worker.mjs?url');
+            pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl.default;
             const bytes = await file.arrayBuffer();
             const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
             const results = [];

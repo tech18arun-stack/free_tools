@@ -12,7 +12,8 @@ export default function PdfPreview() {
         setProcessing(true);
         try {
             const pdfjsLib = await import('pdfjs-dist');
-            pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+            const workerUrl = await import('pdfjs-dist/build/pdf.worker.mjs?url');
+            pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl.default;
             const bytes = await file.arrayBuffer();
             const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
             setInfo({ name: file.name, pages: pdf.numPages, size: (file.size / 1024).toFixed(1) + ' KB' });
