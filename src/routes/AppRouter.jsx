@@ -67,6 +67,57 @@ const GpaCalculator = lazy(() => import('../features/calculator-tools/GpaCalcula
 const PasswordGenerator = lazy(() => import('../features/calculator-tools/PasswordGenerator'));
 const AspectRatioCalculator = lazy(() => import('../features/calculator-tools/AspectRatioCalculator'));
 
+// Audio Tools
+const AudioConverter = lazy(() => import('../features/audio-tools/AudioConverter'));
+const AudioCompressor = lazy(() => import('../features/audio-tools/AudioCompressor'));
+const AudioJoiner = lazy(() => import('../features/audio-tools/AudioJoiner'));
+const AudioCutter = lazy(() => import('../features/audio-tools/AudioCutter'));
+const VolumeBooster = lazy(() => import('../features/audio-tools/VolumeBooster'));
+const AudioSpeedChanger = lazy(() => import('../features/audio-tools/AudioSpeedChanger'));
+const VoiceRecorder = lazy(() => import('../features/audio-tools/VoiceRecorder'));
+const AudioToText = lazy(() => import('../features/audio-tools/AudioToText'));
+
+// Video Tools
+const VideoConverter = lazy(() => import('../features/video-tools/VideoConverter'));
+const VideoCompressor = lazy(() => import('../features/video-tools/VideoCompressor'));
+const VideoCutter = lazy(() => import('../features/video-tools/VideoCutter'));
+const VideoJoiner = lazy(() => import('../features/video-tools/VideoJoiner'));
+const VideoToGif = lazy(() => import('../features/video-tools/VideoToGif'));
+const VideoResizer = lazy(() => import('../features/video-tools/VideoResizer'));
+const VideoRotator = lazy(() => import('../features/video-tools/VideoRotator'));
+const VideoThumbnailExtractor = lazy(() => import('../features/video-tools/VideoThumbnailExtractor'));
+const ScreenRecorder = lazy(() => import('../features/video-tools/ScreenRecorder'));
+
+// Design Tools
+const ColorPaletteGenerator = lazy(() => import('../features/design-tools/ColorPaletteGenerator'));
+const GradientGenerator = lazy(() => import('../features/design-tools/GradientGenerator'));
+const FontPairing = lazy(() => import('../features/design-tools/FontPairing'));
+const MockupGenerator = lazy(() => import('../features/design-tools/MockupGenerator'));
+const BackgroundRemover = lazy(() => import('../features/design-tools/BackgroundRemover'));
+const SvgOptimizer = lazy(() => import('../features/design-tools/SvgOptimizer'));
+const FaviconGenerator = lazy(() => import('../features/design-tools/FaviconGenerator'));
+const SocialMediaImageResizer = lazy(() => import('../features/design-tools/SocialMediaImageResizer'));
+
+// Finance Tools
+const LoanCalculator = lazy(() => import('../features/finance-tools/LoanCalculator'));
+const CurrencyConverter = lazy(() => import('../features/finance-tools/CurrencyConverter'));
+const TipCalculator = lazy(() => import('../features/finance-tools/TipCalculator'));
+const BudgetPlanner = lazy(() => import('../features/finance-tools/BudgetPlanner'));
+const SavingsCalculator = lazy(() => import('../features/finance-tools/SavingsCalculator'));
+const RetirementCalculator = lazy(() => import('../features/finance-tools/RetirementCalculator'));
+const GstCalculator = lazy(() => import('../features/finance-tools/GstCalculator'));
+const DiscountCalculator = lazy(() => import('../features/finance-tools/DiscountCalculator'));
+
+// Health Tools
+const BmiCalculator = lazy(() => import('../features/health-tools/BmiCalculator'));
+const CalorieCalculator = lazy(() => import('../features/health-tools/CalorieCalculator'));
+const WaterIntakeCalculator = lazy(() => import('../features/health-tools/WaterIntakeCalculator'));
+const HeartRateCalculator = lazy(() => import('../features/health-tools/HeartRateCalculator'));
+const SleepCalculator = lazy(() => import('../features/health-tools/SleepCalculator'));
+const PregnancyDueDateCalculator = lazy(() => import('../features/health-tools/PregnancyDueDateCalculator'));
+const BodyFatCalculator = lazy(() => import('../features/health-tools/BodyFatCalculator'));
+const RunningPaceCalculator = lazy(() => import('../features/health-tools/RunningPaceCalculator'));
+
 const Wrap = ({ children }) => <Suspense fallback={<Loader />}>{children}</Suspense>;
 
 const router = createBrowserRouter([
@@ -135,6 +186,57 @@ const router = createBrowserRouter([
             { path: 'tools/gpa-calculator', element: <Wrap><GpaCalculator /></Wrap> },
             { path: 'tools/password-generator', element: <Wrap><PasswordGenerator /></Wrap> },
             { path: 'tools/aspect-ratio-calculator', element: <Wrap><AspectRatioCalculator /></Wrap> },
+
+            // Audio Tools
+            { path: 'tools/audio-converter', element: <Wrap><AudioConverter /></Wrap> },
+            { path: 'tools/audio-compressor', element: <Wrap><AudioCompressor /></Wrap> },
+            { path: 'tools/audio-joiner', element: <Wrap><AudioJoiner /></Wrap> },
+            { path: 'tools/audio-cutter', element: <Wrap><AudioCutter /></Wrap> },
+            { path: 'tools/volume-booster', element: <Wrap><VolumeBooster /></Wrap> },
+            { path: 'tools/audio-speed-changer', element: <Wrap><AudioSpeedChanger /></Wrap> },
+            { path: 'tools/voice-recorder', element: <Wrap><VoiceRecorder /></Wrap> },
+            { path: 'tools/audio-to-text', element: <Wrap><AudioToText /></Wrap> },
+
+            // Video Tools
+            { path: 'tools/video-converter', element: <Wrap><VideoConverter /></Wrap> },
+            { path: 'tools/video-compressor', element: <Wrap><VideoCompressor /></Wrap> },
+            { path: 'tools/video-cutter', element: <Wrap><VideoCutter /></Wrap> },
+            { path: 'tools/video-joiner', element: <Wrap><VideoJoiner /></Wrap> },
+            { path: 'tools/video-to-gif', element: <Wrap><VideoToGif /></Wrap> },
+            { path: 'tools/video-resizer', element: <Wrap><VideoResizer /></Wrap> },
+            { path: 'tools/video-rotator', element: <Wrap><VideoRotator /></Wrap> },
+            { path: 'tools/video-thumbnail-extractor', element: <Wrap><VideoThumbnailExtractor /></Wrap> },
+            { path: 'tools/screen-recorder', element: <Wrap><ScreenRecorder /></Wrap> },
+
+            // Design Tools
+            { path: 'tools/color-palette-generator', element: <Wrap><ColorPaletteGenerator /></Wrap> },
+            { path: 'tools/gradient-generator', element: <Wrap><GradientGenerator /></Wrap> },
+            { path: 'tools/font-pairing', element: <Wrap><FontPairing /></Wrap> },
+            { path: 'tools/mockup-generator', element: <Wrap><MockupGenerator /></Wrap> },
+            { path: 'tools/image-background-remover', element: <Wrap><BackgroundRemover /></Wrap> },
+            { path: 'tools/svg-optimizer', element: <Wrap><SvgOptimizer /></Wrap> },
+            { path: 'tools/favicon-generator', element: <Wrap><FaviconGenerator /></Wrap> },
+            { path: 'tools/social-media-image-resizer', element: <Wrap><SocialMediaImageResizer /></Wrap> },
+
+            // Finance Tools
+            { path: 'tools/loan-calculator', element: <Wrap><LoanCalculator /></Wrap> },
+            { path: 'tools/currency-converter', element: <Wrap><CurrencyConverter /></Wrap> },
+            { path: 'tools/tip-calculator', element: <Wrap><TipCalculator /></Wrap> },
+            { path: 'tools/budget-planner', element: <Wrap><BudgetPlanner /></Wrap> },
+            { path: 'tools/savings-calculator', element: <Wrap><SavingsCalculator /></Wrap> },
+            { path: 'tools/retirement-calculator', element: <Wrap><RetirementCalculator /></Wrap> },
+            { path: 'tools/gst-calculator', element: <Wrap><GstCalculator /></Wrap> },
+            { path: 'tools/discount-calculator', element: <Wrap><DiscountCalculator /></Wrap> },
+
+            // Health Tools
+            { path: 'tools/bmi-calculator', element: <Wrap><BmiCalculator /></Wrap> },
+            { path: 'tools/calorie-calculator', element: <Wrap><CalorieCalculator /></Wrap> },
+            { path: 'tools/water-intake-calculator', element: <Wrap><WaterIntakeCalculator /></Wrap> },
+            { path: 'tools/heart-rate-calculator', element: <Wrap><HeartRateCalculator /></Wrap> },
+            { path: 'tools/sleep-calculator', element: <Wrap><SleepCalculator /></Wrap> },
+            { path: 'tools/pregnancy-due-date-calculator', element: <Wrap><PregnancyDueDateCalculator /></Wrap> },
+            { path: 'tools/body-fat-calculator', element: <Wrap><BodyFatCalculator /></Wrap> },
+            { path: 'tools/running-pace-calculator', element: <Wrap><RunningPaceCalculator /></Wrap> },
 
             { path: '*', element: <Wrap><NotFoundPage /></Wrap> },
         ],
