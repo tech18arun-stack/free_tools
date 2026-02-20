@@ -66,12 +66,12 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3 group">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-500 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:shadow-accent-500/50 transition-all duration-300 group-hover:scale-105">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-2xl shadow-lg group-hover:shadow-indigo-500/50 transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
                             F
                         </div>
                         <div>
                             <span className="font-display font-bold text-2xl text-surface-900 dark:text-white tracking-tight">
-                                Free<span className="text-accent-600 dark:text-accent-400">Tools</span>
+                                Free<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">Tools</span>
                             </span>
                             <p className="text-xs text-surface-500 dark:text-surface-400 -mt-0.5">50+ Free Online Utilities</p>
                         </div>
@@ -162,7 +162,7 @@ export default function Navbar() {
                                     >
                                         <div className="flex">
                                             {/* Popular Tools Sidebar */}
-                                            <div className="w-48 bg-gradient-to-b from-accent-50 to-purple-50 dark:from-accent-900/20 dark:to-purple-900/20 p-4 border-r border-surface-200 dark:border-surface-700">
+                                            <div className="w-48 bg-gradient-to-b from-orange-50 via-red-50 to-pink-50 dark:from-orange-900/20 dark:via-red-900/20 dark:to-pink-900/20 p-4 border-r border-surface-200 dark:border-surface-700">
                                                 <h4 className="font-bold text-surface-900 dark:text-white mb-3 flex items-center gap-2">
                                                     <span className="text-lg">🔥</span> Popular
                                                 </h4>

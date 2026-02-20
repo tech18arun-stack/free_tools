@@ -27,33 +27,73 @@ export default function HomePage() {
     return (
         <>
             <SEOHead
-                title="FreeTools — 50+ Free Online Utilities (No Signup Required)"
-                description="50+ free online tools for image editing, PDF processing, developer utilities, text tools, and student calculators. Fast, secure, and no login required."
+                title="FreeTools — 100+ Free Online Tools (No Signup Required)"
+                description="Access 100+ free online tools for image editing, PDF processing, video editing, audio tools, developer utilities, design tools, finance calculators, and health calculators. Fast, secure, and no login required."
                 canonicalUrl="https://freetools.com/"
+                keywords="free online tools, image compressor, PDF tools, video converter, audio tools, developer tools, JSON formatter, word counter, BMI calculator, loan calculator, color palette generator, QR code generator, no signup required"
+                openGraph={{
+                    type: "website",
+                    locale: "en_US",
+                    url: "https://freetools.com/",
+                    siteName: "FreeTools",
+                    title: "FreeTools — 100+ Free Online Utilities",
+                    description: "100+ free online tools for image editing, PDF processing, video editing, audio tools, developer utilities, and more. No signup required.",
+                    images: [
+                        {
+                            url: "https://freetools.com/og-image.png",
+                            width: 1200,
+                            height: 630,
+                            alt: "FreeTools - Free Online Utilities"
+                        }
+                    ]
+                }}
+                twitter={{
+                    card: "summary_large_image",
+                    site: "@freetools",
+                    creator: "@freetools",
+                    title: "FreeTools — 100+ Free Online Utilities",
+                    description: "100+ free online tools for image editing, PDF processing, video editing, audio tools, developer utilities, and more.",
+                    image: "https://freetools.com/twitter-card.png"
+                }}
                 structuredData={{
                     "@context": "https://schema.org",
                     "@type": "WebSite",
                     "name": "FreeTools",
                     "url": "https://freetools.com/",
-                    "description": "50+ free online tools for image editing, PDF processing, developer utilities, text tools, and student calculators.",
+                    "description": "100+ free online tools for image editing, PDF processing, video editing, audio tools, developer utilities, design tools, finance calculators, and health calculators.",
                     "potentialAction": {
                         "@type": "SearchAction",
                         "target": "https://freetools.com/?q={search_term_string}",
                         "query-input": "required name=search_term_string"
-                    }
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "FreeTools",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://freetools.com/logo.png"
+                        }
+                    },
+                    "sameAs": [
+                        "https://twitter.com/freetools",
+                        "https://github.com/freetools",
+                        "https://www.producthunt.com/products/freetools"
+                    ]
                 }}
             />
 
             {/* Hero Section with Gradient */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-accent-600 via-purple-600 to-pink-500 dark:from-accent-800 dark:via-purple-800 dark:to-pink-700">
+            <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-700">
                 {/* Animated Background Pattern */}
                 <div className="absolute inset-0 opacity-20">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:24px_32px]"></div>
                 </div>
-                
+
                 {/* Floating Orbs */}
                 <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-pink-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }}></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
                     <motion.div
@@ -210,8 +250,8 @@ export default function HomePage() {
                                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${cat.color.split(' ')[0]}`}></div>
 
                                     <div className="relative">
-                                        {/* Icon with better dark theme support */}
-                                        <div className={`w-16 h-16 rounded-2xl ${cat.color} flex items-center justify-center text-4xl mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg border border-current`}>
+                                        {/* Icon with gradient background */}
+                                        <div className={`w-16 h-16 rounded-2xl ${cat.color} flex items-center justify-center text-4xl mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl`}>
                                             {cat.icon}
                                         </div>
                                         
@@ -250,7 +290,7 @@ export default function HomePage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-100 to-red-100 dark:bg-orange-900/30 dark:to-red-900/30 text-orange-600 dark:text-orange-400 text-sm font-semibold mb-4 shadow-sm">
                                 🔥 Trending Now
                             </span>
                             <h2 className="text-3xl md:text-4xl font-display font-bold text-surface-900 dark:text-white mb-4">
@@ -312,8 +352,11 @@ export default function HomePage() {
 
                 {/* CTA Section */}
                 <section className="py-16 mb-16">
-                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-accent-600 to-purple-600 p-8 md:p-12">
+                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 p-8 md:p-12">
                         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:24px_32px]"></div>
+                        {/* Floating Orbs */}
+                        <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+                        <div className="absolute bottom-10 left-10 w-40 h-40 bg-cyan-300/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
                         <div className="relative text-center">
                             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
                                 Need a Custom Tool?
@@ -323,7 +366,7 @@ export default function HomePage() {
                             </p>
                             <a
                                 href="mailto:contact@freetools.com"
-                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent-600 rounded-xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-emerald-50 text-emerald-700 rounded-xl font-semibold hover:from-white hover:to-emerald-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
