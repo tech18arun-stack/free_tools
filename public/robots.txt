@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Exclude potential dynamic non-SEO routes or assets if needed
+Disallow: /assets/
+Disallow: /*?*
+
+Sitemap: https://freetools.com/sitemap.xml
